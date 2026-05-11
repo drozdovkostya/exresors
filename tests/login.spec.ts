@@ -3,7 +3,7 @@ import { test, expect } from '../fixtures/baseTest.js';
 export const testDataSet = [
   {
   id: 'TC-01',
-  type: 'Functional / Positive',
+  type: 'Functional',
   desc: 'Successful Submission (Valid Data)',
   firstName: 'John',
   lastName: 'Doe',
@@ -15,7 +15,7 @@ export const testDataSet = [
 },
 {
   id: 'TC-08',
-  type: 'Validation / Negative',
+  type: 'Validation',
   desc: 'Invalid email',
   firstName: 'Jane',
   lastName: 'Smith',
@@ -27,7 +27,7 @@ export const testDataSet = [
 },
 {
   id: 'TC-03',
-  type: 'Input Validation / Negative',
+  type: 'Validation',
   desc: 'Invalid Name Characters',
   firstName: 'John123',
   lastName: '!@#',
@@ -39,7 +39,7 @@ export const testDataSet = [
 },
 {
   id: 'TC-12',
-  type: 'Security Testing',
+  type: 'Security',
   desc: 'SQL Injection in Name Field',
   firstName: "' OR 1=1 --",
   lastName: 'Doe',
@@ -51,7 +51,7 @@ export const testDataSet = [
 },
 {
   id: 'TC-09',
-  type: 'Validation / Negative',
+  type: 'Validation',
   desc: 'Unchecked privacyCheckbox false',
   firstName: 'John',
   lastName: 'Doe',
@@ -66,7 +66,7 @@ export const testDataSet = [
 
 for (const data of testDataSet) {
   
-  test(`Inquiry Form: ${data.desc}`, async ({ page, inquirePage }) => {
+  test(`Inquiry Form: ${data.desc} @${data.type}`, async ({ page, inquirePage }) => {
     
   if(data.isPositive) {
     await page.route('**/submit-form**', async (route) => {
