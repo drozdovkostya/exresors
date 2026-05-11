@@ -1,0 +1,72 @@
+[
+    {
+        "testCase": "API-01: Valid fields",
+        "email": "test%40ukr.net",
+        "phone": "%2B380+98+765+5432",
+        "firstName": "Ivan",
+        "lastName": "Test",
+        "zip": "12345",
+        "terms": "true",
+        "fbid": "b38f6a8d-e1a5-4102-9557-f327d0c31c77",
+        "pageUrl": "https%3A%2F%2Fexclusiveresorts.com%2Finquire%2F",
+        "refUrl": "https%3A%2F%2Fexclusiveresorts.com%2F",
+        "formType": "SHORT_FORM",
+        "expectedStatus": 200
+    },
+    {
+        "testCase": "API-02: Missing required field",
+        "email": "test%40ukr.net",
+        "phone": "%2B380+98+765+5432",
+        "firstName": "",
+        "lastName": "Test",
+        "zip": "12345",
+        "terms": "true",
+        "fbid": "b38f6a8d-e1a5-4102-9557-f327d0c31c77",
+        "pageUrl": "https%3A%2F%2Fexclusiveresorts.com%2Finquire%2F",
+        "refUrl": "https%3A%2F%2Fexclusiveresorts.com%2F",
+        "formType": "SHORT_FORM",
+        "expectedStatus": 400
+    },
+    {
+        "testCase": "API-03: Malformed email",
+        "email": "not-an-email",
+        "phone": "%2B380+98+765+5432",
+        "firstName": "Ivan",
+        "lastName": "Test",
+        "zip": "12345",
+        "terms": "true",
+        "fbid": "b38f6a8d-e1a5-4102-9557-f327d0c31c77",
+        "pageUrl": "https%3A%2F%2Fexclusiveresorts.com%2Finquire%2F",
+        "refUrl": "https%3A%2F%2Fexclusiveresorts.com%2F",
+        "formType": "SHORT_FORM",
+        "expectedStatus": 400
+    },
+    {
+        "testCase": "API-04: Without consent flag",
+        "email": "test%40ukr.net",
+        "phone": "%2B380+98+765+5432",
+        "firstName": "Ivan",
+        "lastName": "Test",
+        "zip": "12345",
+        "terms": "false",
+        "fbid": "b38f6a8d-e1a5-4102-9557-f327d0c31c77",
+        "pageUrl": "https%3A%2F%2Fexclusiveresorts.com%2Finquire%2F",
+        "refUrl": "https%3A%2F%2Fexclusiveresorts.com%2F",
+        "formType": "SHORT_FORM",
+        "expectedStatus": 400
+    },
+    {
+        "testCase": "API-05: SQL-injection in name",
+        "email": "test%40ukr.net",
+        "phone": "%2B380+98+765+5432",
+        "firstName": "%27%3B+DROP+TABLE+Users%3B+--",
+        "lastName": "Test",
+        "zip": "12345",
+        "terms": "true",
+        "fbid": "b38f6a8d-e1a5-4102-9557-f327d0c31c77",
+        "pageUrl": "https%3A%2F%2Fexclusiveresorts.com%2Finquire%2F",
+        "refUrl": "https%3A%2F%2Fexclusiveresorts.com%2F",
+        "formType": "SHORT_FORM",
+        "expectedStatus": 200
+    }
+]

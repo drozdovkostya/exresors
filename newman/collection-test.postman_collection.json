@@ -1,0 +1,105 @@
+{
+	"info": {
+		"_postman_id": "9ff440d2-ccce-475c-9eb1-251d1cc2132c",
+		"name": "collection-test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "46474782"
+	},
+	"item": [
+		{
+			"name": "https://exclusiveresorts.com/submit-form/",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "accept-language",
+						"value": "en-US,en;q=0.9"
+					},
+					{
+						"key": "cache-control",
+						"value": "no-cache"
+					},
+					{
+						"key": "content-type",
+						"value": "application/x-www-form-urlencoded"
+					},
+					{
+						"key": "origin",
+						"value": "https://exclusiveresorts.com"
+					},
+					{
+						"key": "pragma",
+						"value": "no-cache"
+					},
+					{
+						"key": "priority",
+						"value": "u=1, i"
+					},
+					{
+						"key": "referer",
+						"value": "https://exclusiveresorts.com/inquire/"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Google Chrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"macOS\""
+					},
+					{
+						"key": "sec-fetch-dest",
+						"value": "empty"
+					},
+					{
+						"key": "sec-fetch-mode",
+						"value": "cors"
+					},
+					{
+						"key": "sec-fetch-site",
+						"value": "same-origin"
+					},
+					{
+						"key": "user-agent",
+						"value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36"
+					},
+					{
+						"key": "Cookie",
+						"value": "exclusive-cookies=true; _ga=GA1.1.1631640747.1778088347; ab.storage.deviceId.fc596a20-abfd-442b-b640-2273d0b15b5b=g%3A6d34bb8e-bbf7-1c70-c60b-7311e79c8444%7Ce%3Aundefined%7Cc%3A1778088347384%7Cl%3A1778088347384; _pin_unauth=dWlkPU4yWTFNR1JpT1RRdFlUYzBNaTAwWWpsbExXRmhOekF0TkdFME1qUTJZekZsTkRNMg; slireg=https://scout.us2.salesloft.com; _fbp=fb.1.1778088348085.82910047477250889; sliguid=03d00ca6-b891-49e1-ada9-b7930370409e; slirequested=true; exclusive-referrer=https%3A%2F%2Fexclusiveresorts.com%2F; _clck=nxm5is%5E2%5Eg5y%5E1%5E2317; __q_state_XGwUMqNbCRSd4JJ9=eyJ1dWlkIjoiMTAxODA5NzAtZmRkNi00ODZlLWFmMWUtNjhmMWYwZmQzM2JhIiwiY29va2llRG9tYWluIjoiZXhjbHVzaXZlcmVzb3J0cy5jb20iLCJtZXNzZW5nZXJFeHBhbmRlZCI6bnVsbCwicHJvbXB0RGlzbWlzc2VkIjpmYWxzZSwiY29udmVyc2F0aW9uSWQiOiIxOTEwNjUyOTY0ODM3MTQ3MDI3In0=; pardot_prospect_id=126462431; fb-integration-id=b38f6a8d-e1a5-4102-9557-f327d0c31c77; ab.storage.sessionId.fc596a20-abfd-442b-b640-2273d0b15b5b=g%3A3103b005-1fd7-fcc5-c4db-e1d31de844f1%7Ce%3A1778507187856%7Cc%3A1778505385387%7Cl%3A1778505387856; _ga_9WZ9LY0CMS=GS2.1.s1778498001$o3$g1$t1778505387$j58$l0$h0; _clsk=1lepn47%5E1778511704207%5E5%5E1%5El.clarity.ms%2Fcollect; _gcl_au=1.1.1245072129.1778088347.1781868677.1778511735.1778511734"
+					}
+				],
+				"body": {
+				    "mode": "raw",
+				    "raw": "{\"values\":\"Email={{email}}&Phone={{phone}}&FirstName={{firstName}}&LastName={{lastName}}&ZIP={{zip}}&termsAgreement={{terms}}&FBID={{fbid}}&GCLID=&msclkid=&C_SFDCLastCampaignID=&C_Page_URL={{pageUrl}}&smsOptIn=&preferredTime=&preferredDays=&preferredContactType=&Braze_Campaign_ID=&Referrer_URL={{refUrl}}\",\"form\":\"{{formType}}\"}",
+				    "options": {
+				        "raw": {
+				            "language": "json"
+				        }
+				    }
+				},
+				"url": {
+					"raw": "https://exclusiveresorts.com/submit-form/",
+					"protocol": "https",
+					"host": [
+						"exclusiveresorts",
+						"com"
+					],
+					"path": [
+						"submit-form",
+						""
+					]
+				},
+				"description": "Generated from cURL: curl 'https://exclusiveresorts.com/submit-form/' \\\n  -H 'accept: */*' \\\n  -H 'accept-language: en-US,en;q=0.9' \\\n  -H 'cache-control: no-cache' \\\n  -H 'content-type: application/x-www-form-urlencoded' \\\n  -b 'exclusive-cookies=true; _ga=GA1.1.1631640747.1778088347; ab.storage.deviceId.fc596a20-abfd-442b-b640-2273d0b15b5b=g%3A6d34bb8e-bbf7-1c70-c60b-7311e79c8444%7Ce%3Aundefined%7Cc%3A1778088347384%7Cl%3A1778088347384; _pin_unauth=dWlkPU4yWTFNR1JpT1RRdFlUYzBNaTAwWWpsbExXRmhOekF0TkdFME1qUTJZekZsTkRNMg; slireg=https://scout.us2.salesloft.com; _fbp=fb.1.1778088348085.82910047477250889; sliguid=03d00ca6-b891-49e1-ada9-b7930370409e; slirequested=true; exclusive-referrer=https%3A%2F%2Fexclusiveresorts.com%2F; _clck=nxm5is%5E2%5Eg5y%5E1%5E2317; __q_state_XGwUMqNbCRSd4JJ9=eyJ1dWlkIjoiMTAxODA5NzAtZmRkNi00ODZlLWFmMWUtNjhmMWYwZmQzM2JhIiwiY29va2llRG9tYWluIjoiZXhjbHVzaXZlcmVzb3J0cy5jb20iLCJtZXNzZW5nZXJFeHBhbmRlZCI6bnVsbCwicHJvbXB0RGlzbWlzc2VkIjpmYWxzZSwiY29udmVyc2F0aW9uSWQiOiIxOTEwNjUyOTY0ODM3MTQ3MDI3In0=; pardot_prospect_id=126462431; fb-integration-id=b38f6a8d-e1a5-4102-9557-f327d0c31c77; ab.storage.sessionId.fc596a20-abfd-442b-b640-2273d0b15b5b=g%3A3103b005-1fd7-fcc5-c4db-e1d31de844f1%7Ce%3A1778507187856%7Cc%3A1778505385387%7Cl%3A1778505387856; _ga_9WZ9LY0CMS=GS2.1.s1778498001$o3$g1$t1778505387$j58$l0$h0; _clsk=1lepn47%5E1778511704207%5E5%5E1%5El.clarity.ms%2Fcollect; _gcl_au=1.1.1245072129.1778088347.1781868677.1778511735.1778511734' \\\n  -H 'origin: https://exclusiveresorts.com' \\\n  -H 'pragma: no-cache' \\\n  -H 'priority: u=1, i' \\\n  -H 'referer: https://exclusiveresorts.com/inquire/' \\\n  -H 'sec-ch-ua: \"Google Chrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"' \\\n  -H 'sec-ch-ua-mobile: ?0' \\\n  -H 'sec-ch-ua-platform: \"macOS\"' \\\n  -H 'sec-fetch-dest: empty' \\\n  -H 'sec-fetch-mode: cors' \\\n  -H 'sec-fetch-site: same-origin' \\\n  -H 'user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36' \\\n  --data-raw '{\"values\":\"Email=test%40ukr.net&Phone=%2B380+98+765+5432&FirstName=1&LastName=1&ZIP=1&termsAgreement=true&FBID=b38f6a8d-e1a5-4102-9557-f327d0c31c77&GCLID=&msclkid=&C_SFDCLastCampaignID=&C_Page_URL=https%3A%2F%2Fexclusiveresorts.com%2Finquire%2F&smsOptIn=&preferredTime=&preferredDays=&preferredContactType=Text&Braze_Campaign_ID=&Referrer_URL=https%3A%2F%2Fexclusiveresorts.com%2F\",\"form\":\"SHORT_FORM\"}'"
+			},
+			"response": []
+		}
+	]
+}

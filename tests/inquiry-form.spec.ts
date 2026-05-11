@@ -3,7 +3,7 @@ import { test, expect } from '../fixtures/baseTest.js';
 export const testDataSet = [
   {
   id: 'TC-01',
-  type: 'Functional',
+  type: 'Functional@smoke',
   desc: 'Successful Submission (Valid Data)',
   firstName: 'John',
   lastName: 'Doe',
