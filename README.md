@@ -26,7 +26,6 @@ The repository contains Playwright end-to-end tests for the public inquiry page 
 ├── newman/
 │   ├── collection-test.postman_collection.json
 │   ├── data.json
-│   └── README
 ├── playwright.config.js            # Playwright configuration
 ├── package.json
 └── README.md
