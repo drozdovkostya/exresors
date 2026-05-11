@@ -1,5 +1,7 @@
 # exresors
 
+BUGS.md - bugs that were found on https://exclusiveresorts.com/inquire/
+
 Automated tests for the Exclusive Resorts inquiry form.
 
 The repository contains Playwright end-to-end tests for the public inquiry page and a Postman/Newman collection for checking the `submit-form` API endpoint.

@@ -1,198 +1,76 @@
-# BUG-01 — Valid Gmail Address Rejected
+# 🐛 Lead Generation Form - Bug Report List
 
-- **Severity:** High
-- **Priority:** High
+## [HIGH SEVERITY]
+
+### BUG-01 — Valid Gmail Address Rejected
 - **Type:** Validation
+- **Actual:** `a@gmail.com` is marked as invalid.
+- **Expected:** Valid email formats must be accepted.
 
-## Preconditions
-User opens inquiry form.
-
-## Steps to Reproduce
-1. Open inquiry form.
-2. Fill all required fields with valid data.
-3. Enter `a@gmail.com` into Email field.
-4. Click Submit.
-
-## Actual Result
-Email is marked as invalid and form submission is blocked.
-
-## Expected Result
-`a@gmail.com` should be accepted as a valid email address.
-
----
-
-# BUG-02 — Missing Postal Code Validation
-
-- **Severity:** Medium
-- **Priority:** High
+### BUG-02 — Form Submitted with Invalid Email
 - **Type:** Validation
+- **Actual:** Submission triggers even with `test@` or `invalid-email`.
+- **Expected:** Submit must be blocked until a valid email format is provided.
 
-## Preconditions
-User opens inquiry form.
-
-## Steps to Reproduce
-1. Open inquiry form.
-2. Enter invalid postal code values:
-   - `1`
-   - `abc`
-   - `@@@@`
-3. Fill remaining required fields.
-4. Click Submit.
-
-## Actual Result
-Form is submitted successfully with invalid postal code.
-
-## Expected Result
-Postal Code should validate format and length according to region rules.
-
----
-
-# BUG-03 — Incorrect Phone Codes in Dropdown
-
-- **Severity:** Medium
-- **Priority:** Medium
-- **Type:** Data / UI
-
-## Preconditions
-User opens inquiry form.
-
-## Steps to Reproduce
-1. Open Phone country code dropdown.
-2. Review available country codes.
-
-## Actual Result
-Some country codes are incorrect or mismatched with countries.
-
-## Expected Result
-All country codes should match correct international dialing standards.
-
----
-
-# BUG-04 — Backend Does Not Validate Phone Number
-
-- **Severity:** High
-- **Priority:** High
+### BUG-03 — Backend Does Not Validate Phone Number
 - **Type:** Backend Validation
+- **Actual:** Server accepts `123` or `abc` as a valid phone number.
+- **Expected:** Backend must enforce international phone format standards.
 
-## Preconditions
-User opens inquiry form.
+### BUG-04 — Missing ARIA Labels for Screen Readers (A11y)
+- **Type:** Accessibility
+- **Actual:** Input fields lack `aria-label` or `<label>` tags. Screen readers announce "Edit text, blank".
+- **Expected:** Each field must have a descriptive label for assistive technologies.
 
-## Steps to Reproduce
-1. Enter invalid phone number:
-   - `123`
-   - `abcdef`
-   - `@@@@@@`
-2. Fill remaining required fields.
-3. Click Submit.
-
-## Actual Result
-Backend accepts invalid phone number and form submits successfully.
-
-## Expected Result
-Backend should reject invalid phone number formats.
+### BUG-05 — Error Messages Are Not Announced (A11y)
+- **Type:** Accessibility
+- **Actual:** Validation errors lack `aria-live`. VoiceOver stays silent when errors appear.
+- **Expected:** Use `aria-live="assertive"` or `role="alert"` for instant error announcement.
 
 ---
 
-# BUG-05 — Submit Button Active with Empty Required Fields
+## [MEDIUM SEVERITY]
 
-- **Severity:** Medium
-- **Priority:** High
-- **Type:** UI / Validation
-
-## Preconditions
-User opens inquiry form.
-
-## Steps to Reproduce
-1. Open inquiry form.
-2. Leave required fields empty.
-3. Observe Submit button state.
-
-## Actual Result
-Submit button remains enabled.
-
-## Expected Result
-Submit button should remain disabled until all required fields are completed correctly.
-
----
-
-# BUG-06 — Form Can Be Submitted with Invalid Email
-
-- **Severity:** High
-- **Priority:** High
+### BUG-06 — Missing Postal Code Validation
 - **Type:** Validation
+- **Actual:** Form accepts `1`, `abc`, or `@@@` in the Postal Code field.
+- **Expected:** Validate length and format based on regional rules.
 
-## Preconditions
-User opens inquiry form.
-
-## Steps to Reproduce
-1. Enter invalid email:
-   - `invalid-email`
-   - `test@`
-2. Fill remaining required fields.
-3. Click Submit.
-
-## Actual Result
-Form submission is triggered despite invalid email.
-
-## Expected Result
-Submission should be blocked until valid email format is provided.
-
----
-
-# BUG-07 — Debug Logging Visible in Production Environment
-
-- **Severity:** Medium
-- **Priority:** Medium
-- **Type:** Security / Maintenance
-
-## Preconditions
-User opens production environment.
-
-## Steps to Reproduce
-1. Open browser DevTools.
-2. Navigate through inquiry form.
-3. Observe browser console logs.
-
-## Actual Result
-Debug or development logs are visible in production console.
-
-## Expected Result
-Debug logging should be disabled in production environment.
-
----
-
-# BUG-08 — Hydration Mismatch Error in Browser Console
-
-- **Severity:** Medium
-- **Priority:** Medium
-- **Type:** Frontend / React Hydration
-
-## Preconditions
-User opens inquiry form page.
-
-## Steps to Reproduce
-1. Open browser DevTools.
-2. Navigate to inquiry form page.
-3. Observe browser console.
-
-## Actual Result
-Console displays:
-```text
-Hydration completed but contains mismatches.
-```
-
-## Expected Result
-No hydration or rendering mismatch errors should appear in browser console.
-
-
-# BUG-09 — Name Fields Accept Numeric Values
-
-- **Severity:** Medium
-- **Priority:** High
+### BUG-07 — Name Fields Accept Numeric Values
 - **Type:** Input Validation
+- **Actual:** Names accept `123` or numeric-only strings.
+- **Expected:** Only alphabetic characters and standard symbols (hyphens, etc.) allowed.
 
-## Actual Result
-First Name and Last Name fields accept numeric-only values (`1`).
+### BUG-08 — Incorrect Phone Codes in Dropdown
+- **Type:** UI / Data
+- **Actual:** Some country codes in the dropdown are mismatched or outdated.
+- **Expected:** Dialing codes must match international ITU standards.
 
-## Expected Result
-Name fields should allow alphabetic characters only.
+### BUG-09 — Submit Button Active with Invalid Data
+- **Type:** UX / UI Logic
+- **Actual:** Button is enabled even if required fields are empty or invalid.
+- **Expected:** Button should remain disabled until all required fields pass validation.
+
+### BUG-10 — Debug Logging in Production
+- **Type:** Security / Maintenance
+- **Actual:** Development console logs are visible in the production environment.
+- **Expected:** All debug logging must be disabled for production builds.
+
+### BUG-11 — Hydration Mismatch Error
+- **Type:** Frontend (React)
+- **Actual:** Console shows "Hydration completed but contains mismatches."
+- **Expected:** SSR and Client-side rendered HTML must match perfectly.
+
+### BUG-12 — Error Messages Are Not Focusable
+- **Type:** Accessibility / UX
+- **Actual:** Focus remains on the "Submit" button; users cannot "Tab" to error descriptions.
+- **Expected:** Move focus to the error summary or the first invalid field on failure.
+
+---
+
+## [LOW SEVERITY]
+
+### BUG-13 — Generic Error Banner Message
+- **Type:** UX
+- **Actual:** Banner says "There was a problem," without specifying what is wrong.
+- **Expected:** Provide specific feedback or a summary of invalid fields.
