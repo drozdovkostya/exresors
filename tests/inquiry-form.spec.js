@@ -62,7 +62,7 @@ export const testDataSet = [
   isPositive: false
 }
 ];
-
+let successRegistrationText = `We appreciate your interest.`
 
 for (const data of testDataSet) {
   
@@ -93,9 +93,11 @@ for (const data of testDataSet) {
    
     await inquirePage.submit();
     let errorMessage = await inquirePage.isErrorMessageDisplayed();
-    console.log(errorMessage)
     expect(errorMessage).toBe(!data.isPositive)
-
+    await page.waitForLoadState()
+    if( data.isPositive ){
+      await expect(page.getByText(successRegistrationText)).toBeVisible();
+    }
 
   });
 }
