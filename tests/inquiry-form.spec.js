@@ -3,7 +3,7 @@ import { test, expect } from '../fixtures/baseTest.js';
 export const testDataSet = [
   {
   id: 'TC-01',
-  type: 'Functional@smoke',
+  type: 'Functional @smoke @regression',
   desc: 'Successful Submission (Valid Data)',
   firstName: 'John',
   lastName: 'Doe',
@@ -15,7 +15,7 @@ export const testDataSet = [
 },
 {
   id: 'TC-08',
-  type: 'Validation',
+  type: 'Validation @negative @regression',
   desc: 'Invalid email',
   firstName: 'Jane',
   lastName: 'Smith',
@@ -27,7 +27,7 @@ export const testDataSet = [
 },
 {
   id: 'TC-03',
-  type: 'Validation',
+  type: 'Validation @negative',
   desc: 'Invalid Name Characters',
   firstName: 'John123',
   lastName: '!@#',
@@ -39,7 +39,7 @@ export const testDataSet = [
 },
 {
   id: 'TC-12',
-  type: 'Security',
+  type: 'Security @negative',
   desc: 'SQL Injection in Name Field',
   firstName: "' OR 1=1 --",
   lastName: 'Doe',
@@ -50,8 +50,20 @@ export const testDataSet = [
   isPositive: false
 },
 {
+  id: 'TC-11',
+  type: 'Security @negative',
+  desc: 'XSS Injection in Name Field',
+  firstName: '<script>alert("XSS")</script>',
+  lastName: 'Doe',
+  email: 'attacker@test.com',
+  postalCode: '12345',
+  phone: '+380000000000',
+  privacyCheckbox: true,
+  isPositive: false
+},
+{
   id: 'TC-09',
-  type: 'Validation',
+  type: 'Validation @smoke @negative @regression',
   desc: 'Unchecked privacyCheckbox false',
   firstName: 'John',
   lastName: 'Doe',
@@ -92,11 +104,13 @@ for (const data of testDataSet) {
 
    
     await inquirePage.submit();
+    
     let errorMessage = await inquirePage.isErrorMessageDisplayed();
+
     expect(errorMessage).toBe(!data.isPositive)
-    await page.waitForLoadState()
+
     if( data.isPositive ){
-      await expect(page.getByText(successRegistrationText)).toBeVisible();
+      await expect(await inquirePage.successRegistrationMessage()).toBeVisible({timeout: 5000});
     }
 
   });

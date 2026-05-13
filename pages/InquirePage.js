@@ -50,6 +50,10 @@ export class InquirePage {
     return await responsePromise;
   }
 
+  async successRegistrationMessage(){
+      return this.page.getByText('We appreciate your interest.');
+  }
+
   async isErrorMessageDisplayed(){
     return await this.errorMessage.isVisible();
   }
