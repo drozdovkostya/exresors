@@ -74,7 +74,6 @@ export const testDataSet = [
   isPositive: false
 }
 ];
-let successRegistrationText = `We appreciate your interest.`
 
 for (const data of testDataSet) {
   
