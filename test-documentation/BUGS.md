@@ -4,7 +4,7 @@
 
 ### BUG-01 — Valid Gmail Address Rejected
 - **Type:** Validation
-- **Actual:** `a@gmail.com` is marked as invalid.
+- **Actual:** `test@gmail.com` is marked as invalid but `test@msg.net` marked as valid.
 - **Expected:** Valid email formats must be accepted.
 
 ### BUG-02 — Form Submitted with Invalid Email
