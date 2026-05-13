@@ -33,7 +33,7 @@
 
 ### BUG-06 — Missing Postal Code Validation
 - **Type:** Validation
-- **Actual:** Form accepts `1`, `abc`, or `@@@` in the Postal Code field.
+- **Actual:** Form accepts `1`, `abc` in the Postal Code field.
 - **Expected:** Validate length and format based on regional rules.
 
 ### BUG-07 — Name Fields Accept Numeric Values
