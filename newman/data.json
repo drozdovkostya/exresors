@@ -67,6 +67,6 @@
         "pageUrl": "https%3A%2F%2Fexclusiveresorts.com%2Finquire%2F",
         "refUrl": "https%3A%2F%2Fexclusiveresorts.com%2F",
         "formType": "SHORT_FORM",
-        "expectedStatus": 200
+        "expectedStatus": 400
     }
 ]
